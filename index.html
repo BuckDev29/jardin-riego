@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jardín — cuidado de plantas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<header class="hero">
+  <span class="eyebrow">registro de riego</span>
+  <h1>Tu jardín</h1>
+  <p class="sub">Agrega tus plantas, dile cada cuántos días necesitan agua, y el sistema te avisa cuándo toca regarlas.</p>
+</header>
+
+<main>
+  <section class="panel add-panel">
+    <h2>Nueva planta</h2>
+    <form id="plant-form">
+      <div class="field">
+        <label for="name">Nombre</label>
+        <input id="name" type="text" placeholder="Ej. Monstera, Suculenta..." required>
+      </div>
+      <div class="field">
+        <label for="emoji">Icono</label>
+        <select id="emoji">
+          <option value="🌿">🌿 hoja</option>
+          <option value="🌵">🌵 cactus</option>
+          <option value="🌸">🌸 flor</option>
+          <option value="🪴">🪴 maceta</option>
+          <option value="🌱">🌱 brote</option>
+          <option value="🍀">🍀 trébol</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="frequency">Regar cada (días)</label>
+        <input id="frequency" type="number" min="1" max="60" value="7" required>
+      </div>
+      <button type="submit" class="btn-primary">Plantar</button>
+    </form>
+  </section>
+
+  <section class="garden">
+    <div class="garden-head">
+      <h2>Mis plantas</h2>
+      <span id="count" class="count-badge">0</span>
+    </div>
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty-state">Tu jardín está vacío. Agrega tu primera planta para empezar. 🌱</p>
+  </section>
+</main>
+
+<footer>
+  <p>Los datos se guardan solo en este navegador.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
